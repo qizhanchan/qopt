@@ -1,0 +1,38 @@
+{
+  "name": "mip_assignment",
+  "direction": "min",
+  "vars": [
+    {"name": "x00", "type": "binary"},
+    {"name": "x01", "type": "binary"},
+    {"name": "x02", "type": "binary"},
+    {"name": "x03", "type": "binary"},
+    {"name": "x10", "type": "binary"},
+    {"name": "x11", "type": "binary"},
+    {"name": "x12", "type": "binary"},
+    {"name": "x13", "type": "binary"},
+    {"name": "x20", "type": "binary"},
+    {"name": "x21", "type": "binary"},
+    {"name": "x22", "type": "binary"},
+    {"name": "x23", "type": "binary"},
+    {"name": "x30", "type": "binary"},
+    {"name": "x31", "type": "binary"},
+    {"name": "x32", "type": "binary"},
+    {"name": "x33", "type": "binary"}
+  ],
+  "objective": {
+    "x00": 90,  "x01": 75, "x02": 75, "x03": 80,
+    "x10": 35,  "x11": 85, "x12": 55, "x13": 65,
+    "x20": 125, "x21": 95, "x22": 90, "x23": 105,
+    "x30": 45,  "x31": 110,"x32": 95, "x33": 115
+  },
+  "constraints": [
+    {"name": "w0", "coeffs": {"x00":1,"x01":1,"x02":1,"x03":1}, "sense": "=", "rhs": 1},
+    {"name": "w1", "coeffs": {"x10":1,"x11":1,"x12":1,"x13":1}, "sense": "=", "rhs": 1},
+    {"name": "w2", "coeffs": {"x20":1,"x21":1,"x22":1,"x23":1}, "sense": "=", "rhs": 1},
+    {"name": "w3", "coeffs": {"x30":1,"x31":1,"x32":1,"x33":1}, "sense": "=", "rhs": 1},
+    {"name": "j0", "coeffs": {"x00":1,"x10":1,"x20":1,"x30":1}, "sense": "=", "rhs": 1},
+    {"name": "j1", "coeffs": {"x01":1,"x11":1,"x21":1,"x31":1}, "sense": "=", "rhs": 1},
+    {"name": "j2", "coeffs": {"x02":1,"x12":1,"x22":1,"x32":1}, "sense": "=", "rhs": 1},
+    {"name": "j3", "coeffs": {"x03":1,"x13":1,"x23":1,"x33":1}, "sense": "=", "rhs": 1}
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "name": "lp_unbounded",
+  "direction": "max",
+  "vars": [
+    {"name": "x", "type": "continuous"}
+  ],
+  "objective": {"x": 1.0},
+  "constraints": [],
+  "expect": {"status": "unbounded"}
+}

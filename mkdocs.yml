@@ -1,0 +1,33 @@
+site_name: q-opt
+site_url: https://qizhanchan.github.io/qopt/
+site_description: Pure Go LP/MIP solver
+repo_url: https://github.com/qizhanchan/qopt
+docs_dir: docs
+site_dir: site
+theme:
+  name: material
+  language: en
+  features:
+    - navigation.sections
+    - content.code.copy
+nav:
+  - Overview: index.md
+  - Quick start: quickstart.md
+  - Benchmarks: benchmarks.md
+  - Development:
+      - Milestones: solver-milestones.md
+      - Experiment history: solver-history.md
+      - SCIP baseline: scip-baseline.md
+      - SCIP pipeline: scip-pipeline-parity.md
+      - SCIP JSON audit: scip-json-model-audit.md
+      - SCIP neos17 conflict study: scip-neos17-conflict-ab.md
+      - SCIP timtab1 Gomory study: scip-timtab1-gomory-ab.md
+      - q-opt timtab1 proof study: qopt-timtab1-proof-switch.md
+  - Site deployment: github-pages.md
+plugins:
+  - search
+markdown_extensions:
+  - admonition
+  - tables
+  - toc:
+      permalink: true

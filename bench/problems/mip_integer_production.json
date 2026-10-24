@@ -1,0 +1,14 @@
+{
+  "name": "mip_integer_production",
+  "direction": "max",
+  "vars": [
+    {"name": "x", "type": "integer"},
+    {"name": "y", "type": "integer"}
+  ],
+  "objective": {"x": 5, "y": 4},
+  "constraints": [
+    {"name": "labor",   "coeffs": {"x": 6, "y": 4}, "sense": "<=", "rhs": 24},
+    {"name": "machine", "coeffs": {"x": 1, "y": 2}, "sense": "<=", "rhs": 6}
+  ],
+  "expect": {"status": "optimal", "objective": 20.0, "values": {"x": 4, "y": 0}}
+}

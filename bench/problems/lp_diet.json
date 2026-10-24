@@ -1,0 +1,19 @@
+{
+  "name": "lp_diet",
+  "direction": "min",
+  "vars": [
+    {"name": "bread", "type": "continuous"},
+    {"name": "milk",  "type": "continuous"},
+    {"name": "cheese","type": "continuous"},
+    {"name": "potato","type": "continuous"},
+    {"name": "fish",  "type": "continuous"},
+    {"name": "yogurt","type": "continuous"}
+  ],
+  "objective": {"bread": 2.0, "milk": 3.5, "cheese": 8.0, "potato": 1.5, "fish": 11.0, "yogurt": 1.0},
+  "constraints": [
+    {"name": "protein", "coeffs": {"bread": 4,  "milk": 8,  "cheese": 7,  "potato": 1.3, "fish": 8,  "yogurt": 9.2}, "sense": ">=", "rhs": 15},
+    {"name": "fat",     "coeffs": {"bread": 1.2,"milk": 5,  "cheese": 9,  "potato": 0.1, "fish": 7,  "yogurt": 1},   "sense": ">=", "rhs": 8},
+    {"name": "carbs",   "coeffs": {"bread": 50, "milk": 11.7,"cheese": 0.4,"potato": 22.6,"fish": 0,  "yogurt": 17}, "sense": ">=", "rhs": 70},
+    {"name": "calories","coeffs": {"bread": 250,"milk": 60, "cheese": 100,"potato": 90,  "fish": 80, "yogurt": 100},"sense": ">=", "rhs": 400}
+  ]
+}

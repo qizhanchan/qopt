@@ -1,0 +1,38 @@
+{
+  "date": "2026-07-21",
+  "baseline_commit": "5971fe0",
+  "status": "accepted",
+  "implementation": {
+    "parent_state": "immutable dual-feasible revised-simplex snapshot",
+    "result_contract": ["estimate", "valid_bound", "certified_infeasible"],
+    "probe_basis_reused_by_child": false,
+    "per_side_iteration_limit": "2x average node LP iterations, early-node inflation, clamp 10..500",
+    "global_iteration_offset": 1600,
+    "max_candidates": 8,
+    "lookahead_without_improvement": 9
+  },
+  "suite_30s": {
+    "profile": "revised reliability best-estimate best-bound-freq=10 RINS adaptive local-branching proximity-search parallel=3",
+    "native_probe_sides": 35221,
+    "fallback_probe_sides": 1773,
+    "iteration_limit_sides": 10611,
+    "valid_iteration_limit_bounds": 10531,
+    "uncertified_infeasible_prunes": 0,
+    "representative": {
+      "neos17": {"objective": 0.15505153846153902, "dual_bound": 0.07376762237762238, "gap": 0.08128391608391664},
+      "timtab1": {"objective": 788305.9999996399, "dual_bound": 296725.00000005006, "gap": 0.6235920469359252},
+      "ic97_potential": {"objective": 4205, "dual_bound": 3867.9999999999995, "gap": 0.08014268727705125},
+      "gen-ip054": {"objective": 6853.077098424999, "dual_bound": 6789.236938731175, "gap": 0.0093155482300687},
+      "neos-3754480-nidda": {"objective": 15890.756247462841, "dual_bound": -567596.116604516, "gap": 36.71862968783814}
+    }
+  },
+  "proof_gate": {
+    "time_limit": "5m",
+    "markshare_4_0": {"status": "optimal", "objective": 0.9999999999999734, "seconds": 39.641878, "nodes": 1632081},
+    "pk1": {"status": "optimal", "objective": 10.99999999999994, "seconds": 72.359923, "nodes": 296599}
+  },
+  "rejected_followup": {
+    "name": "repair dual-infeasible corrected parent before probing",
+    "reason": "removed most fallbacks but changed branching vertices and weakened neos17/timtab1 proof trajectories"
+  }
+}

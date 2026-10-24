@@ -1,0 +1,76 @@
+{
+  "date": "2026-07-18",
+  "input_mode": "json-api",
+  "target": "timtab1",
+  "incumbents_verified": true,
+  "runs": [
+    {
+      "name": "equality-aggregation",
+      "budget_seconds": 300,
+      "objective": 793314.9999998399,
+      "dual_bound": 415654.33333341125,
+      "relative_gap": 0.4760538583872798,
+      "nodes": 869664,
+      "lp_iterations": 5047976,
+      "presolved_columns": 226,
+      "presolved_rows": 168,
+      "presolved_nonzeros": 651,
+      "aggregated_columns": 171
+    },
+    {
+      "name": "equality-aggregation-adaptive-proof",
+      "budget_seconds": 300,
+      "objective": 817893.99999984,
+      "dual_bound": 503516.33333346073,
+      "relative_gap": 0.3843745848073721,
+      "nodes": 627008,
+      "lp_iterations": 5002528,
+      "proof_switch_node": 75822,
+      "proof_switch_gap": 0.6105840121089495
+    },
+    {
+      "name": "root-gmi-2x20-adaptive-proof",
+      "budget_seconds": 300,
+      "objective": 793167.9999997797,
+      "dual_bound": 516737.36837075965,
+      "relative_gap": 0.3485146042567235,
+      "nodes": 235162,
+      "lp_iterations": 8250430,
+      "root_cut_rounds": 2,
+      "root_cuts": 40,
+      "cut_ms": 291.817,
+      "proof_switch_node": 68584,
+      "proof_switch_gap": 0.4729058335602869,
+      "incumbents": [
+        {
+          "elapsed_ms": 25585.955,
+          "node": 6215,
+          "objective": 1246821.9999995201,
+          "source": "rounding"
+        },
+        {
+          "elapsed_ms": 107661.807,
+          "node": 68583,
+          "objective": 793167.9999997797,
+          "source": "rounding"
+        }
+      ],
+      "bound_checkpoints": [
+        {"elapsed_seconds": 108, "dual_bound": 419793.81},
+        {"elapsed_seconds": 120, "dual_bound": 452582.096},
+        {"elapsed_seconds": 180, "dual_bound": 490470.0},
+        {"elapsed_seconds": 240, "dual_bound": 506558.871},
+        {"elapsed_seconds": 300, "dual_bound": 516737.36837075965}
+      ]
+    }
+  ],
+  "neos17_warm_certificate_diagnosis": {
+    "budget_seconds": 30,
+    "dual_no_entering": 372,
+    "warm_infeasible_certificates": 1,
+    "reject_infinite_helpful_width": 371,
+    "objective": 0.2226876123876129,
+    "dual_bound": 0.06697936063936065,
+    "relative_gap": 0.15570825174825226
+  }
+}

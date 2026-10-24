@@ -1,0 +1,99 @@
+{
+  "date": "2026-07-18",
+  "problem": "timtab1",
+  "input_contract": {
+    "scip_input_mode": "json-api",
+    "parallel": 3,
+    "original_model_verifier_tolerance": 1e-5
+  },
+  "scip_11_30s": {
+    "default": {
+      "objective": 764771.9999997802,
+      "dual_bound": 705256.5765571161,
+      "gap_pct": 7.782113289017014,
+      "nodes": 23717,
+      "lp_iterations": 895699,
+      "root_first_lp_objective": 157896.036606,
+      "root_first_lp_iterations": 225,
+      "root_final_bound": 480226.098363,
+      "root_final_iterations": 2024,
+      "gomory_calls": 2311,
+      "gomory_root_calls": 10,
+      "gomory_cuts_found": 30014,
+      "gomory_cuts_applied": 23674,
+      "gomory_time_s": 2.006978,
+      "strong_branch_calls": 1810,
+      "strong_branch_iterations": 62796
+    },
+    "gomory_disabled": {
+      "parameter": "separating/gomory/freq=-1",
+      "objective": 764771.9999997802,
+      "dual_bound": 640616.9060829999,
+      "gap_pct": 16.234262488273103,
+      "nodes": 34107,
+      "lp_iterations": 1094209,
+      "root_first_lp_objective": 157896.036606,
+      "root_first_lp_iterations": 225,
+      "root_final_bound": 479240.285338,
+      "root_final_iterations": 1834,
+      "strong_branch_calls": 2528,
+      "strong_branch_iterations": 61923
+    },
+    "causal_reading": {
+      "gap_ratio_disabled_over_default": 2.085555,
+      "default_dual_bound_gain_pct": 10.090222,
+      "mechanism": "sustained tree-wide Gomory separation"
+    }
+  },
+  "qopt_root_only": {
+    "default": {
+      "dual_bound": 28694,
+      "elapsed_ms": 14.73,
+      "cuts": 0
+    },
+    "two_round_gmi": {
+      "dual_bound": 221552,
+      "elapsed_ms": 436.961,
+      "cut_ms": 421.536,
+      "cuts": 40
+    },
+    "bound_ratio": 7.721474873493413
+  },
+  "qopt_5m": {
+    "default": {
+      "objective": 811338.9999998399,
+      "dual_bound": 349632.0000001,
+      "relative_gap": 0.569067923518814,
+      "nodes": 160999,
+      "lp_iterations": 11280855,
+      "verified_original_model": true
+    },
+    "two_round_gmi": {
+      "configuration": {
+        "cut_rounds": 2,
+        "per_node_cut_cap": 20,
+        "root_cuts_drive_branching": true
+      },
+      "objective": 783289.9999997998,
+      "dual_bound": 418646.94202898536,
+      "relative_gap": 0.4655275287197687,
+      "nodes": 178010,
+      "lp_iterations": 8555651,
+      "cuts": 40,
+      "cut_ms": 289.108,
+      "verified_original_model": true
+    },
+    "change": {
+      "incumbent_improvement_pct": 3.457125,
+      "dual_bound_gain_pct": 19.739309,
+      "gap_reduction_pct": 18.194734,
+      "node_gain_pct": 10.565904
+    }
+  },
+  "artifacts": {
+    "scip_default": "/tmp/scip11-timtab1-json-default-30s.json",
+    "scip_gomory_disabled": "/tmp/scip11-timtab1-json-gomory-off-30s.json",
+    "qopt_default_5m": "/tmp/qopt-timtab1-default-5m-20260718.json",
+    "qopt_two_round_gmi_5m": "/tmp/qopt-timtab1-root-gmi-direct-r2-5m-20260718.json"
+  }
+}

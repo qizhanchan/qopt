@@ -1,0 +1,206 @@
+{
+  "solver": "qopt",
+  "version": "Go 1.26.0",
+  "items": [
+    {
+      "name": "lp_bounds",
+      "status": "optimal",
+      "objective": 2,
+      "elapsed_ms": 0.001,
+      "values": {
+        "x": 2
+      },
+      "proven_optimal": true
+    },
+    {
+      "name": "lp_diet",
+      "status": "optimal",
+      "objective": 6.649386084583899,
+      "elapsed_ms": 0.032,
+      "iterations": 10,
+      "values": {
+        "bread": 0,
+        "cheese": 0,
+        "fish": 0,
+        "milk": 0.9004092769440651,
+        "potato": 0,
+        "yogurt": 3.4979536152796715
+      },
+      "proven_optimal": true
+    },
+    {
+      "name": "lp_equality",
+      "status": "optimal",
+      "objective": 5,
+      "elapsed_ms": 0.006,
+      "iterations": 2,
+      "values": {
+        "x": 5,
+        "y": 0
+      },
+      "proven_optimal": true
+    },
+    {
+      "name": "lp_ge",
+      "status": "optimal",
+      "objective": 3,
+      "elapsed_ms": 0.002,
+      "values": {
+        "x": 3
+      },
+      "proven_optimal": true
+    },
+    {
+      "name": "lp_infeasible",
+      "status": "infeasible",
+      "objective": 0,
+      "elapsed_ms": 0.005,
+      "proven_optimal": false
+    },
+    {
+      "name": "lp_simple_max",
+      "status": "optimal",
+      "objective": 10,
+      "elapsed_ms": 0.01,
+      "iterations": 2,
+      "values": {
+        "x": 2,
+        "y": 2
+      },
+      "proven_optimal": true
+    },
+    {
+      "name": "lp_transportation",
+      "status": "optimal",
+      "objective": 520,
+      "elapsed_ms": 0.029,
+      "iterations": 11,
+      "values": {
+        "x11": 40,
+        "x12": 0,
+        "x13": 0,
+        "x21": 0,
+        "x22": 50,
+        "x23": 30
+      },
+      "proven_optimal": true
+    },
+    {
+      "name": "lp_unbounded",
+      "status": "unbounded",
+      "objective": 0,
+      "elapsed_ms": 0.001,
+      "proven_optimal": false
+    },
+    {
+      "name": "mip_assignment",
+      "status": "optimal",
+      "objective": 275,
+      "elapsed_ms": 0.084,
+      "iterations": 17,
+      "nodes": 1,
+      "values": {
+        "x00": 0,
+        "x01": 0,
+        "x02": 0,
+        "x03": 1,
+        "x10": 0,
+        "x11": 0,
+        "x12": 1,
+        "x13": 0,
+        "x20": 0,
+        "x21": 1,
+        "x22": 0,
+        "x23": 0,
+        "x30": 1,
+        "x31": 0,
+        "x32": 0,
+        "x33": 0
+      },
+      "best_bound": 275,
+      "proven_optimal": true
+    },
+    {
+      "name": "mip_binary_knapsack",
+      "status": "optimal",
+      "objective": 13,
+      "elapsed_ms": 0.028,
+      "iterations": 3,
+      "nodes": 1,
+      "values": {
+        "x": 0,
+        "y": 1,
+        "z": 1
+      },
+      "best_bound": 13,
+      "proven_optimal": true
+    },
+    {
+      "name": "mip_facility_location",
+      "status": "optimal",
+      "objective": 585,
+      "elapsed_ms": 0.18,
+      "iterations": 21,
+      "nodes": 7,
+      "values": {
+        "x11": 30,
+        "x12": 4.999999999999997,
+        "x13": 0,
+        "x14": 15,
+        "x21": 0,
+        "x22": 0,
+        "x23": 0,
+        "x24": 0,
+        "x31": 0,
+        "x32": 20.00000000000002,
+        "x33": 20,
+        "x34": 0,
+        "y1": 1,
+        "y2": 0,
+        "y3": 1
+      },
+      "best_bound": 585,
+      "proven_optimal": true
+    },
+    {
+      "name": "mip_infeasible_integer",
+      "status": "infeasible",
+      "objective": 0,
+      "elapsed_ms": 0.005,
+      "nodes": 1,
+      "proven_optimal": false
+    },
+    {
+      "name": "mip_integer_production",
+      "status": "optimal",
+      "objective": 20,
+      "elapsed_ms": 0.084,
+      "iterations": 6,
+      "nodes": 5,
+      "values": {
+        "x": 4,
+        "y": 0
+      },
+      "best_bound": 20,
+      "proven_optimal": true
+    },
+    {
+      "name": "mip_set_cover",
+      "status": "optimal",
+      "objective": 6,
+      "elapsed_ms": 0.074,
+      "iterations": 10,
+      "nodes": 3,
+      "values": {
+        "s1": 1,
+        "s2": 1,
+        "s3": 0,
+        "s4": 0,
+        "s5": 1,
+        "s6": 0
+      },
+      "best_bound": 6,
+      "proven_optimal": true
+    }
+  ]
+}

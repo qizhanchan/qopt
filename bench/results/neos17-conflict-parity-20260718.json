@@ -1,0 +1,136 @@
+{
+  "date": "2026-07-18",
+  "problem": "neos17",
+  "contract": {
+    "scip_version": "11.0.0",
+    "pyscipopt_version": "6.2.1",
+    "scip_input_mode": "json-api",
+    "focused_time_limit_seconds": 30,
+    "parallel": 3,
+    "native_mps_scoring": false,
+    "model_equivalence_audit": "docs/scip-json-model-audit.md",
+    "local_scip_source": "3rd_repo/scip"
+  },
+  "scip_default": {
+    "status": "optimal",
+    "objective": 0.15000257742257742,
+    "solving_time_seconds": 8.647734,
+    "nodes": 4116,
+    "lp_iterations": 44113,
+    "original_size": {
+      "columns": 535,
+      "rows": 486,
+      "nonzeros": 4931
+    },
+    "presolved_size": {
+      "columns": 511,
+      "rows": 488,
+      "nonzeros": 2506
+    },
+    "first_lp": {
+      "objective": 0.0006814985014985017,
+      "iterations_statistics": 1200,
+      "iterations_event_snapshot": 1464,
+      "fractional_candidates": 171,
+      "fractionality_sum": 0.4375624375624377,
+      "fractionality_mean": 0.0025588446641078228,
+      "fractionality_max": 0.007992007992007994,
+      "basic_columns": 435,
+      "basic_columns_at_bound": 120,
+      "basic_at_bound_ratio": 0.27586206896551724
+    },
+    "root_final": {
+      "objective": 0.11774217025414259,
+      "separation_rounds": 89,
+      "cuts_applied": 477,
+      "columns": 511,
+      "rows": 681,
+      "nonzeros": 3377,
+      "active_cut_rows": 194,
+      "active_cut_age_mean": 1.8762886597938144,
+      "active_cut_age_max": 50,
+      "active_cut_density_mean": 0.008806262230919765,
+      "active_cut_density_max": 0.0410958904109589,
+      "fractional_candidates": 148,
+      "fractionality_mean": 0.42625363821460116,
+      "basic_at_bound_ratio": 0.14929577464788732
+    },
+    "branching": {
+      "rule": "relpscost",
+      "branch_rule_lp_calls": 2287,
+      "constraints_found": 433,
+      "domain_reductions": 639,
+      "strong_branch_calls": 1213,
+      "strong_branch_iterations": 55474
+    }
+  },
+  "scip_ab": [
+    {"configuration": "default", "seconds": 8.647734, "nodes": 4116, "lp_iterations": 44113, "root_objective": 0.11774217025414259},
+    {"configuration": "gomory_off", "seconds": 5.098833, "nodes": 1719, "lp_iterations": 22493, "root_objective": 0.12137581819368481},
+    {"configuration": "aggregation_off", "seconds": 8.889526, "nodes": 1164, "lp_iterations": 108942, "root_objective": 0.04098099650349651},
+    {"configuration": "aggregation_and_gomory_off", "seconds": 12.212, "nodes": 10787, "lp_iterations": 146282, "root_objective": 0.04098099650349651},
+    {"configuration": "separation_off", "seconds": 9.068172, "nodes": 7700, "lp_iterations": 80898, "root_objective": 0.0006814985014985017},
+    {"configuration": "relpscost_off", "seconds": 8.60503, "nodes": 3318, "lp_iterations": 124046, "root_objective": 0.11774217025414259},
+    {"configuration": "presolve_off", "seconds": 6.988358, "nodes": 3280, "lp_iterations": 46862, "root_objective": 0.09974054530790098},
+    {"configuration": "propagation_off", "seconds": 9.447101, "nodes": 2688, "lp_iterations": 76969, "root_objective": 0.10133331328168019},
+    {"configuration": "conflict_off", "seconds": 14.409231, "nodes": 7949, "lp_iterations": 177145, "root_objective": 0.0978033715742451},
+    {"configuration": "conflict_usesb_off", "seconds": 6.929, "nodes": 2853, "lp_iterations": 38502, "root_objective": 0.11774217025414259},
+    {"configuration": "conflict_useinflp_off", "seconds": 11.985979, "nodes": 9248, "lp_iterations": 115137, "root_objective": 0.09868804402107269},
+    {"configuration": "conflict_useboundlp_off", "seconds": 7.453815, "nodes": 4023, "lp_iterations": 66667, "root_objective": 0.11774217025414259},
+    {"configuration": "relpscost_conflictweight_zero", "seconds": 7.167305, "nodes": 1033, "lp_iterations": 38866, "root_objective": 0.11774217025414259}
+  ],
+  "causal_reading": {
+    "mechanism": "infeasible-LP conflict analysis with resolved logical conflict constraints and repropagation",
+    "not_causal": [
+      "conflict contribution to relative-pseudocost branch scoring",
+      "Gomory separator in isolation",
+      "default presolve portfolio in isolation"
+    ],
+    "local_source_files": [
+      "3rd_repo/scip/src/scip/conflict_resolution.c",
+      "3rd_repo/scip/src/scip/branch_relpscost.c"
+    ]
+  },
+  "qopt_ab": {
+    "node_limit_300": {
+      "control": {"objective": 0.22191910089910158, "dual_bound": 0.03360756243756239, "relative_gap": 0.1883115384615392, "nodes": 300, "lp_iterations": 103149, "elapsed_ms": 16138.986},
+      "certificate_conflicts": {"objective": 0.20085092907092986, "dual_bound": 0.03181802197802195, "relative_gap": 0.1690329070929079, "nodes": 300, "lp_iterations": 106968, "elapsed_ms": 18012.456, "conflicts": 14, "literals": 31, "prunes": 7, "propagations": 37, "certificate_tests": 96, "certificate_proofs": 65}
+    },
+    "time_limit_30_seconds": {
+      "control": {"objective": 0.2094093006993017, "dual_bound": 0.046271728271728256, "relative_gap": 0.16313757242757343, "nodes": 596, "lp_iterations": 197250},
+      "certificate_conflicts": {"objective": 0.20085092907092986, "dual_bound": 0.03910425574425569, "relative_gap": 0.16174667332667417, "nodes": 494, "lp_iterations": 204471, "conflicts": 19, "literals": 53, "prunes": 8, "propagations": 52, "certificate_tests": 135, "certificate_proofs": 92}
+    }
+  },
+  "rejected_qopt_variants": [
+    {"configuration": "max_20_literals", "budget": "300_nodes", "objective": 0.20752134865134939, "dual_bound": 0.01806202797202778, "relative_gap": 0.1894593206793216, "lp_iterations": 104753, "elapsed_ms": 21110.191, "conflicts": 23, "propagations": 197},
+    {"configuration": "max_32_literals", "budget": "300_nodes", "objective": 0.20969605394605442, "dual_bound": 0.020525734265734192, "relative_gap": 0.18917031968032022, "lp_iterations": 105524, "elapsed_ms": 22455.927, "conflicts": 36, "propagations": 246},
+    {"configuration": "all_conflicts_as_lp_rows", "budget": "300_nodes", "objective": 0.2226876123876129, "dual_bound": 0.021722027972028136, "relative_gap": 0.20096558441558476, "lp_iterations": 536238, "elapsed_ms": 92058.41, "conflicts": 43},
+    {"configuration": "only_up_to_3_literal_lp_rows", "budget": "300_nodes", "objective": 0.2226876123876129, "dual_bound": 0.021370559440559385, "relative_gap": 0.20131705294705352, "lp_iterations": 400252, "elapsed_ms": 44576.71, "conflicts": 54},
+    {"configuration": "inferred_bound_reason_expansion", "budget": "300_nodes", "objective": 0.20085092907092986, "dual_bound": 0.03181802197802195, "relative_gap": 0.1690329070929079, "lp_iterations": 106968, "elapsed_ms": 17586.829, "same_search_trajectory_as_certificate_control": true}
+  ],
+  "timtab1_cross_check_5m": {
+    "control": {"objective": 830826.9999999, "dual_bound": 353863.00000011, "relative_gap": 0.5740834132735785, "nodes": 180697, "lp_iterations": 10615604},
+    "max_20_literal_conflicts": {"objective": 836246.9999997399, "dual_bound": 351638, "relative_gap": 0.5795046200463387, "nodes": 137203, "lp_iterations": 7660518, "conflicts": 162}
+  },
+  "acceptance": {
+    "accepted_for_default_profile": false,
+    "reason": "The 30-second neos17 gap improvement is only 0.14 percentage point and the dual bound is weaker; the five-minute timtab1 cross-check regresses.",
+    "retained_default_off_infrastructure": [
+      "Phase-I infeasibility certificate",
+      "certificate-guided no-good minimization",
+      "integral bound-literal no-good pool",
+      "pre-LP conflict prune and unit propagation",
+      "conflict and reliability telemetry"
+    ],
+    "next_priority": "cheap incremental row lifecycle plus reason-certified logic/set conflict propagation"
+  },
+  "raw_artifacts": [
+    "/tmp/scip11-neos17-json-default-30s-20260718.json",
+    "/tmp/scip11-neos17-json-useinflp-off-30s-20260718.json",
+    "/tmp/scip11-neos17-json-relpscost-conflictweight0-30s-20260718.json",
+    "/tmp/qopt-neos17-lpconf-control-30s-current-20260718.json",
+    "/tmp/qopt-neos17-lpconf-cert-30s-20260718.json",
+    "/tmp/qopt-timtab1-boundconf-control-5m-20260718.json",
+    "/tmp/qopt-timtab1-boundconf-cert20-5m-20260718.json"
+  ]
+}

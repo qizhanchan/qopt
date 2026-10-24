@@ -1,0 +1,268 @@
+{
+ "date": "2026-07-22",
+ "baseline_commit": "26696c5",
+ "status": "infrastructure retained, opt-in (-dual-proofs); suite promotion gate NOT met",
+ "implementation": "SCIP dual-ray conflict pool: certified aggregate Farkas exits export a model-space proof row (structural coefs exact, slacks folded via global ranges, node-lower shift cancelled); 100-entry pool, last-hit eviction, maxvarsfac 0.15 density filter (floor 10); pooled proofs prune nodes/probe sides whose post-propagation box violates the proof, before any LP work; proofs are propagate-only and never enter an LP",
+ "soundness": {
+  "shadow_verify": "QOPT_DUALPROOF_VERIFY=1: timtab1 6593 prunes / 0 contradicted, neos17 1434 prunes / 0 contradicted (30s focused runs)",
+  "toy_suite": "11 ok / 3 warn / 0 fail vs OR-Tools (known warn classes); both infeasible toys detected",
+  "proofs": "markshare_4_0 and pk1 node-identical in both arms (1632081 / 296599 nodes)"
+ },
+ "note": "5m arms run as five foreground batches of <=3 instances with -parallel 3 (harness background tasks are macOS-QoS-throttled to ~28% CPU and invalidate absolute numbers); batch composition identical across arms",
+ "suite_5m_control": {
+  "assign1-5-8": {
+   "status": "time_limit",
+   "objective": 211.9999999999999,
+   "dual_bound": 192.76891215430302,
+   "relative_gap": 0.09071267851743808,
+   "nodes": 15482,
+   "iterations": 536076
+  },
+  "gen-ip002": {
+   "status": "time_limit",
+   "objective": -4783.733391600001,
+   "dual_bound": -4806.8383510503145,
+   "relative_gap": 0.004829901158556404,
+   "nodes": 257007,
+   "iterations": 1613631
+  },
+  "gen-ip054": {
+   "status": "time_limit",
+   "objective": 6853.077098424999,
+   "dual_bound": 6793.309634249865,
+   "relative_gap": 0.008721259562200254,
+   "nodes": 273985,
+   "iterations": 1242348
+  },
+  "glass4": {
+   "status": "time_limit",
+   "objective": 3550027199.9999228,
+   "dual_bound": 800005000,
+   "relative_gap": 0.7746482055123359,
+   "nodes": 82096,
+   "iterations": 658229
+  },
+  "ic97_potential": {
+   "status": "time_limit",
+   "objective": 4174,
+   "dual_bound": 3868,
+   "relative_gap": 0.07331097268806899,
+   "nodes": 19801,
+   "iterations": 148221
+  },
+  "mad": {
+   "status": "time_limit",
+   "objective": 0.12079999999999982,
+   "relative_gap": 0.12079999999999982,
+   "nodes": 231933,
+   "iterations": 3016748
+  },
+  "markshare_4_0": {
+   "status": "optimal",
+   "objective": 0.9999999999999734,
+   "dual_bound": 0.9999999999999734,
+   "nodes": 1632081,
+   "iterations": 5898501
+  },
+  "neos-3046615-murg": {
+   "status": "time_limit",
+   "objective": 1710,
+   "dual_bound": 345,
+   "relative_gap": 0.7982456140350878,
+   "nodes": 118576,
+   "iterations": 860620
+  },
+  "neos-3754480-nidda": {
+   "status": "time_limit",
+   "objective": 15890.756247462841,
+   "dual_bound": -432840.3448106703,
+   "relative_gap": 28.238498789494596,
+   "nodes": 63933,
+   "iterations": 833309
+  },
+  "neos17": {
+   "status": "time_limit",
+   "objective": 0.15471571428571493,
+   "dual_bound": 0.09923529470529474,
+   "relative_gap": 0.05548041958042019,
+   "nodes": 32513,
+   "iterations": 545769
+  },
+  "neos5": {
+   "status": "time_limit",
+   "objective": 15,
+   "dual_bound": 13.999999999999998,
+   "relative_gap": 0.06666666666666679,
+   "nodes": 162537,
+   "iterations": 6136514
+  },
+  "pk1": {
+   "status": "optimal",
+   "objective": 10.99999999999994,
+   "dual_bound": 10.99999999999994,
+   "nodes": 296599,
+   "iterations": 5058901
+  },
+  "timtab1": {
+   "status": "time_limit",
+   "objective": 788305.9999996399,
+   "dual_bound": 374962.0000001,
+   "relative_gap": 0.5243446072968222,
+   "nodes": 446287,
+   "iterations": 2588449
+  }
+ },
+ "suite_5m_dual_proofs": {
+  "assign1-5-8": {
+   "status": "time_limit",
+   "objective": 211.9999999999999,
+   "dual_bound": 192.85402936222098,
+   "relative_gap": 0.09031118225367411,
+   "nodes": 16725,
+   "iterations": 573180
+  },
+  "gen-ip002": {
+   "status": "time_limit",
+   "objective": -4783.733391600001,
+   "dual_bound": -4806.572768957114,
+   "relative_gap": 0.00477438341300921,
+   "nodes": 271957,
+   "iterations": 1704954,
+   "dual_proofs_rejected_dense": 330
+  },
+  "gen-ip054": {
+   "status": "time_limit",
+   "objective": 6853.077098424999,
+   "dual_bound": 6793.707665058909,
+   "relative_gap": 0.008663178965217695,
+   "nodes": 297759,
+   "iterations": 1344034,
+   "dual_proofs_rejected_dense": 1
+  },
+  "glass4": {
+   "status": "time_limit",
+   "objective": 3583645024.45333,
+   "dual_bound": 800004500,
+   "relative_gap": 0.776762348240103,
+   "nodes": 87793,
+   "iterations": 608393,
+   "dual_proofs_pooled": 266,
+   "dual_proof_prunes": 3801,
+   "dual_proofs_evicted": 166
+  },
+  "ic97_potential": {
+   "status": "time_limit",
+   "objective": 4181,
+   "dual_bound": 3867.9999999999995,
+   "relative_gap": 0.0748624730925617,
+   "nodes": 17304,
+   "iterations": 158071,
+   "dual_proofs_pooled": 58,
+   "dual_proof_prunes": 1325
+  },
+  "mad": {
+   "status": "time_limit",
+   "objective": 0.114,
+   "relative_gap": 0.114,
+   "nodes": 270631,
+   "iterations": 3384707
+  },
+  "markshare_4_0": {
+   "status": "optimal",
+   "objective": 0.9999999999999734,
+   "dual_bound": 0.9999999999999734,
+   "nodes": 1632081,
+   "iterations": 5898501
+  },
+  "neos-3046615-murg": {
+   "status": "time_limit",
+   "objective": 1746,
+   "dual_bound": 383,
+   "relative_gap": 0.7806414662084765,
+   "nodes": 308134,
+   "iterations": 1275295,
+   "dual_proofs_pooled": 3900,
+   "dual_proof_prunes": 41069,
+   "dual_proofs_evicted": 3800
+  },
+  "neos-3754480-nidda": {
+   "status": "time_limit",
+   "objective": 15404.908891473935,
+   "dual_bound": -447001.836236876,
+   "relative_gap": 30.016843876582453,
+   "nodes": 73000,
+   "iterations": 1988447,
+   "dual_proofs_pooled": 83,
+   "dual_proof_prunes": 51,
+   "dual_proofs_rejected_dense": 174
+  },
+  "neos17": {
+   "status": "time_limit",
+   "objective": 0.15505153846153907,
+   "dual_bound": 0.10002306693306702,
+   "relative_gap": 0.05502847152847205,
+   "nodes": 40718,
+   "iterations": 475251,
+   "dual_proofs_pooled": 4555,
+   "dual_proof_prunes": 10631,
+   "dual_proofs_evicted": 4455
+  },
+  "neos5": {
+   "status": "time_limit",
+   "objective": 15,
+   "dual_bound": 14.000000000000004,
+   "relative_gap": 0.06666666666666643,
+   "nodes": 154147,
+   "iterations": 5876338
+  },
+  "pk1": {
+   "status": "optimal",
+   "objective": 10.99999999999994,
+   "dual_bound": 10.99999999999994,
+   "nodes": 296599,
+   "iterations": 5058901
+  },
+  "timtab1": {
+   "status": "time_limit",
+   "objective": 801981.99999978,
+   "dual_bound": 340431.33333343,
+   "relative_gap": 0.5755125011115918,
+   "nodes": 285570,
+   "iterations": 1111656,
+   "dual_proofs_pooled": 2530,
+   "dual_proof_prunes": 36354,
+   "dual_proofs_evicted": 2430
+  }
+ },
+ "focused_30s": {
+  "neos17": {
+   "control": {
+    "bound": 0.08401,
+    "gap": 0.071,
+    "nodes": 6051
+   },
+   "dual_proofs": {
+    "bound": 0.08428,
+    "gap": 0.0708,
+    "nodes": 8105,
+    "pooled": 344,
+    "prunes": 2443
+   }
+  },
+  "timtab1": {
+   "control": {
+    "objective": 788306,
+    "bound": 301074,
+    "nodes": 75647
+   },
+   "dual_proofs": {
+    "objective": 1199647,
+    "bound": 297988,
+    "nodes": 73310,
+    "pooled": 793,
+    "prunes": 8996
+   }
+  }
+ },
+ "verdict": "Prunes fire heavily (neos17 10.6k, murg 41k, timtab1 36k in 5m) and are sound, but suite effect is mixed: neos17 bound 0.0992->0.1000 and murg bound 345->383 with 2.6x nodes improve, while timtab1 regresses (obj 788k->802k, bound 375k->340k, both 30s and 5m consistent) and the remaining instances move within run noise. Promotion gate (two target gaps -25% relative) not met. Next levers: proof bound-tightening propagation with repropagation (SCIP tightenSingleVar/propagateLongProof) instead of prune-only, probe-side proof pooling, and near-duplicate pool dedup (exact dedup measured 0 hits)."
+}

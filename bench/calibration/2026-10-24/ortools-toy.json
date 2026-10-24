@@ -1,0 +1,214 @@
+{
+  "solver": "ortools",
+  "version": "9.15.6755",
+  "items": [
+    {
+      "name": "lp_bounds",
+      "status": "optimal",
+      "objective": 2.0,
+      "iterations": 0,
+      "nodes": 0,
+      "elapsed_ms": 0.004124944098293781,
+      "values": {
+        "x": 2.0
+      },
+      "proven_optimal": true
+    },
+    {
+      "name": "lp_diet",
+      "status": "optimal",
+      "objective": 6.649386084583902,
+      "iterations": 4,
+      "nodes": 0,
+      "elapsed_ms": 0.02916704397648573,
+      "values": {
+        "bread": 0.0,
+        "milk": 0.9004092769440656,
+        "cheese": 0.0,
+        "potato": 0.0,
+        "fish": 0.0,
+        "yogurt": 3.4979536152796724
+      },
+      "proven_optimal": true
+    },
+    {
+      "name": "lp_equality",
+      "status": "optimal",
+      "objective": 5.0,
+      "iterations": 0,
+      "nodes": 0,
+      "elapsed_ms": 0.006375019438564777,
+      "values": {
+        "x": 0.0,
+        "y": 5.0
+      },
+      "proven_optimal": true
+    },
+    {
+      "name": "lp_ge",
+      "status": "optimal",
+      "objective": 3.0,
+      "iterations": 0,
+      "nodes": 0,
+      "elapsed_ms": 0.00466697383671999,
+      "values": {
+        "x": 3.0
+      },
+      "proven_optimal": true
+    },
+    {
+      "name": "lp_infeasible",
+      "status": "infeasible",
+      "objective": 0.0,
+      "iterations": 0,
+      "nodes": 0,
+      "elapsed_ms": 0.003334018401801586,
+      "proven_optimal": false
+    },
+    {
+      "name": "lp_simple_max",
+      "status": "optimal",
+      "objective": 10.0,
+      "iterations": 0,
+      "nodes": 0,
+      "elapsed_ms": 0.036082929000258446,
+      "values": {
+        "x": 2.0,
+        "y": 2.0
+      },
+      "proven_optimal": true
+    },
+    {
+      "name": "lp_transportation",
+      "status": "optimal",
+      "objective": 520.0,
+      "iterations": 0,
+      "nodes": 0,
+      "elapsed_ms": 0.021791900508105755,
+      "values": {
+        "x11": 40.0,
+        "x12": 0.0,
+        "x13": 0.0,
+        "x21": 0.0,
+        "x22": 50.0,
+        "x23": 29.999999999999993
+      },
+      "proven_optimal": true
+    },
+    {
+      "name": "lp_unbounded",
+      "status": "infeasible",
+      "objective": 0.0,
+      "iterations": 0,
+      "nodes": 0,
+      "elapsed_ms": 0.004292000085115433,
+      "proven_optimal": false
+    },
+    {
+      "name": "mip_assignment",
+      "status": "optimal",
+      "objective": 275.0,
+      "iterations": 0,
+      "nodes": 0,
+      "elapsed_ms": 1.4300000621005893,
+      "values": {
+        "x00": 0.0,
+        "x01": 0.0,
+        "x02": 0.0,
+        "x03": 1.0,
+        "x10": 0.0,
+        "x11": 0.0,
+        "x12": 1.0,
+        "x13": 0.0,
+        "x20": 0.0,
+        "x21": 1.0,
+        "x22": 0.0,
+        "x23": 0.0,
+        "x30": 1.0,
+        "x31": 0.0,
+        "x32": 0.0,
+        "x33": 0.0
+      },
+      "proven_optimal": true
+    },
+    {
+      "name": "mip_binary_knapsack",
+      "status": "optimal",
+      "objective": 13.0,
+      "iterations": 0,
+      "nodes": 0,
+      "elapsed_ms": 0.5771669093519449,
+      "values": {
+        "x": 0.0,
+        "y": 1.0,
+        "z": 1.0
+      },
+      "proven_optimal": true
+    },
+    {
+      "name": "mip_facility_location",
+      "status": "optimal",
+      "objective": 585.0,
+      "iterations": 0,
+      "nodes": 0,
+      "elapsed_ms": 1.5286660054698586,
+      "values": {
+        "y1": 1.0,
+        "y2": 0.0,
+        "y3": 1.0,
+        "x11": 30.0,
+        "x12": 5.0,
+        "x13": 0.0,
+        "x14": 15.0,
+        "x21": 0.0,
+        "x22": 0.0,
+        "x23": 0.0,
+        "x24": 0.0,
+        "x31": 0.0,
+        "x32": 20.0,
+        "x33": 20.0,
+        "x34": 0.0
+      },
+      "proven_optimal": true
+    },
+    {
+      "name": "mip_infeasible_integer",
+      "status": "infeasible",
+      "objective": 0.0,
+      "iterations": 0,
+      "nodes": 0,
+      "elapsed_ms": 0.2529589692130685,
+      "proven_optimal": false
+    },
+    {
+      "name": "mip_integer_production",
+      "status": "optimal",
+      "objective": 20.0,
+      "iterations": 1,
+      "nodes": 0,
+      "elapsed_ms": 0.6582920905202627,
+      "values": {
+        "x": 4.0,
+        "y": 0.0
+      },
+      "proven_optimal": true
+    },
+    {
+      "name": "mip_set_cover",
+      "status": "optimal",
+      "objective": 6.0,
+      "iterations": 0,
+      "nodes": 0,
+      "elapsed_ms": 0.893375021405518,
+      "values": {
+        "s1": 0.0,
+        "s2": 0.0,
+        "s3": 0.0,
+        "s4": 1.0,
+        "s5": 1.0,
+        "s6": 0.0
+      },
+      "proven_optimal": true
+    }
+  ]
+}

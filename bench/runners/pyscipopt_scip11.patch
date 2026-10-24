@@ -1,0 +1,80 @@
+diff --git a/src/pyscipopt/scip.pxd b/src/pyscipopt/scip.pxd
+index 6db5be2..ccfc7fe 100644
+--- a/src/pyscipopt/scip.pxd
++++ b/src/pyscipopt/scip.pxd
+@@ -587,6 +587,7 @@ cdef extern from "scip/scip.h":
+                           const char*           suffix,
+                           SCIP_Bool             globalcopy,
+                           SCIP_Bool             enablepricing,
++                          SCIP_Bool             copysymhdlrs,
+                           SCIP_Bool             threadsafe,
+                           SCIP_Bool             passmessagehdlr,
+                           SCIP_Bool*            valid)
+@@ -596,6 +597,7 @@ cdef extern from "scip/scip.h":
+                               SCIP_HASHMAP*         consmap,
+                               const char*           suffix,
+                               SCIP_Bool             enablepricing,
++                              SCIP_Bool             copysymhdlrs,
+                               SCIP_Bool             threadsafe,
+                               SCIP_Bool             passmessagehdlr,
+                               SCIP_Bool*            valid)
+@@ -774,7 +776,7 @@ cdef extern from "scip/scip.h":
+     void SCIPnodeGetAddedConss(SCIP_NODE* node, SCIP_CONS** addedconss,
+                                int* naddedconss, int addedconsssize)
+     void SCIPnodeGetNDomchg(SCIP_NODE* node, int* nbranchings, int* nconsprop,
+-                            int* nprop)
++                            int* nprop, int* nsymprop)
+     SCIP_DOMCHG* SCIPnodeGetDomchg(SCIP_NODE* node)
+
+     # Domain change methods
+@@ -1227,6 +1229,7 @@ cdef extern from "scip/scip.h":
+                                       const char* name,
+                                       const char* desc,
+                                       int         priority,
++                                      SCIP_Bool   enable,
+                                       SCIP_RETCODE (*iisfindercopy) (SCIP* scip, SCIP_IISFINDER* iisfinder),
+                                       SCIP_RETCODE (*iisfinderfree) (SCIP* scip, SCIP_IISFINDER* iisfinder),
+                                       SCIP_RETCODE (*iisfinderexec) (SCIP_IIS* iis, SCIP_IISFINDER* iisfinder, SCIP_RESULT* result),
+diff --git a/src/pyscipopt/scip.pxi b/src/pyscipopt/scip.pxi
+index d047e58..fa4f8cd 100644
+--- a/src/pyscipopt/scip.pxi
++++ b/src/pyscipopt/scip.pxi
+@@ -41,7 +41,7 @@ include "nodesel.pxi"
+ include "matrix.pxi"
+
+ # recommended SCIP version; major version is required
+-MAJOR = 10
++MAJOR = 11
+ MINOR = 0
+ PATCH = 0
+
+@@ -1506,7 +1506,7 @@ cdef class Node:
+         cdef int nbranchings
+         cdef int nconsprop
+         cdef int nprop
+-        SCIPnodeGetNDomchg(self.scip_node, &nbranchings, &nconsprop, &nprop)
++        SCIPnodeGetNDomchg(self.scip_node, &nbranchings, &nconsprop, &nprop, NULL)
+         return nbranchings, nconsprop, nprop
+
+     def getDomchg(self):
+@@ -2860,9 +2860,9 @@ cdef class Model:
+             self._bestSol = <Solution> sourceModel._bestSol
+             n = str_conversion(problemName)
+             if origcopy:
+-                PY_SCIP_CALL(SCIPcopyOrig(sourceModel._scip, self._scip, NULL, NULL, n, enablepricing, threadsafe, True, self._valid))
++                PY_SCIP_CALL(SCIPcopyOrig(sourceModel._scip, self._scip, NULL, NULL, n, enablepricing, True, threadsafe, True, self._valid))
+             else:
+-                PY_SCIP_CALL(SCIPcopy(sourceModel._scip, self._scip, NULL, NULL, n, globalcopy, enablepricing, threadsafe, True, self._valid))
++                PY_SCIP_CALL(SCIPcopy(sourceModel._scip, self._scip, NULL, NULL, n, globalcopy, enablepricing, True, threadsafe, True, self._valid))
+
+     def attachEventHandlerCallback(self,
+         callback,
+@@ -9927,7 +9927,7 @@ cdef class Model:
+
+         iisfinder.iis = IIS()
+
+-        PY_SCIP_CALL(SCIPincludeIISfinder(self._scip, nam, des, priority, PyiisfinderCopy, PyiisfinderFree,
++        PY_SCIP_CALL(SCIPincludeIISfinder(self._scip, nam, des, priority, True, PyiisfinderCopy, PyiisfinderFree,
+                                          PyiisfinderExec, <SCIP_IISFINDERDATA*> iisfinder))
+
+         scip_iisfinder = SCIPfindIISfinder(self._scip, nam)

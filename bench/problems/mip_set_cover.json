@@ -1,0 +1,20 @@
+{
+  "name": "mip_set_cover",
+  "direction": "min",
+  "vars": [
+    {"name": "s1", "type": "binary"},
+    {"name": "s2", "type": "binary"},
+    {"name": "s3", "type": "binary"},
+    {"name": "s4", "type": "binary"},
+    {"name": "s5", "type": "binary"},
+    {"name": "s6", "type": "binary"}
+  ],
+  "objective": {"s1": 3, "s2": 2, "s3": 4, "s4": 5, "s5": 1, "s6": 3},
+  "constraints": [
+    {"name": "e1", "coeffs": {"s1":1, "s3":1, "s5":1},        "sense": ">=", "rhs": 1},
+    {"name": "e2", "coeffs": {"s2":1, "s3":1, "s4":1},        "sense": ">=", "rhs": 1},
+    {"name": "e3", "coeffs": {"s1":1, "s4":1, "s6":1},        "sense": ">=", "rhs": 1},
+    {"name": "e4", "coeffs": {"s2":1, "s5":1, "s6":1},        "sense": ">=", "rhs": 1},
+    {"name": "e5", "coeffs": {"s3":1, "s4":1, "s5":1, "s6":1},"sense": ">=", "rhs": 1}
+  ]
+}

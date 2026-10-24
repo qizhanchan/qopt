@@ -1,0 +1,12 @@
+{
+  "name": "lp_ge",
+  "direction": "min",
+  "vars": [
+    {"name": "x", "type": "continuous"}
+  ],
+  "objective": {"x": 1.0},
+  "constraints": [
+    {"name": "ge", "coeffs": {"x": 1}, "sense": ">=", "rhs": 3}
+  ],
+  "expect": {"status": "optimal", "objective": 3.0, "values": {"x": 3}}
+}

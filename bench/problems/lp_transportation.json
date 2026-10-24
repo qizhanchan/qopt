@@ -1,0 +1,23 @@
+{
+  "name": "lp_transportation",
+  "direction": "min",
+  "vars": [
+    {"name": "x11", "type": "continuous"},
+    {"name": "x12", "type": "continuous"},
+    {"name": "x13", "type": "continuous"},
+    {"name": "x21", "type": "continuous"},
+    {"name": "x22", "type": "continuous"},
+    {"name": "x23", "type": "continuous"}
+  ],
+  "objective": {
+    "x11": 4, "x12": 6, "x13": 9,
+    "x21": 5, "x22": 3, "x23": 7
+  },
+  "constraints": [
+    {"name": "src1", "coeffs": {"x11": 1, "x12": 1, "x13": 1}, "sense": "<=", "rhs": 70},
+    {"name": "src2", "coeffs": {"x21": 1, "x22": 1, "x23": 1}, "sense": "<=", "rhs": 80},
+    {"name": "dst1", "coeffs": {"x11": 1, "x21": 1},           "sense": "=",  "rhs": 40},
+    {"name": "dst2", "coeffs": {"x12": 1, "x22": 1},           "sense": "=",  "rhs": 50},
+    {"name": "dst3", "coeffs": {"x13": 1, "x23": 1},           "sense": "=",  "rhs": 30}
+  ]
+}

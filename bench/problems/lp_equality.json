@@ -1,0 +1,13 @@
+{
+  "name": "lp_equality",
+  "direction": "min",
+  "vars": [
+    {"name": "x", "type": "continuous"},
+    {"name": "y", "type": "continuous"}
+  ],
+  "objective": {"x": 1.0, "y": 1.0},
+  "constraints": [
+    {"name": "eq", "coeffs": {"x": 1, "y": 1}, "sense": "=", "rhs": 5}
+  ],
+  "expect": {"status": "optimal", "objective": 5.0}
+}

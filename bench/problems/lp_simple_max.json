@@ -1,0 +1,15 @@
+{
+  "name": "lp_simple_max",
+  "direction": "max",
+  "vars": [
+    {"name": "x", "type": "continuous"},
+    {"name": "y", "type": "continuous"}
+  ],
+  "objective": {"x": 3.0, "y": 2.0},
+  "constraints": [
+    {"name": "sum",     "coeffs": {"x": 1, "y": 1}, "sense": "<=", "rhs": 4},
+    {"name": "x_cap",   "coeffs": {"x": 1},         "sense": "<=", "rhs": 2},
+    {"name": "y_cap",   "coeffs": {"y": 1},         "sense": "<=", "rhs": 3}
+  ],
+  "expect": {"status": "optimal", "objective": 10.0, "values": {"x": 2, "y": 2}}
+}

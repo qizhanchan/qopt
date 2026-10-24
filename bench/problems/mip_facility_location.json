@@ -1,0 +1,36 @@
+{
+  "name": "mip_facility_location",
+  "direction": "min",
+  "vars": [
+    {"name": "y1", "type": "binary"},
+    {"name": "y2", "type": "binary"},
+    {"name": "y3", "type": "binary"},
+    {"name": "x11", "type": "continuous"},
+    {"name": "x12", "type": "continuous"},
+    {"name": "x13", "type": "continuous"},
+    {"name": "x14", "type": "continuous"},
+    {"name": "x21", "type": "continuous"},
+    {"name": "x22", "type": "continuous"},
+    {"name": "x23", "type": "continuous"},
+    {"name": "x24", "type": "continuous"},
+    {"name": "x31", "type": "continuous"},
+    {"name": "x32", "type": "continuous"},
+    {"name": "x33", "type": "continuous"},
+    {"name": "x34", "type": "continuous"}
+  ],
+  "objective": {
+    "y1": 100, "y2": 150, "y3": 120,
+    "x11": 4, "x12": 6, "x13": 9, "x14": 5,
+    "x21": 5, "x22": 4, "x23": 7, "x24": 6,
+    "x31": 6, "x32": 3, "x33": 4, "x34": 8
+  },
+  "constraints": [
+    {"name": "d1", "coeffs": {"x11":1,"x21":1,"x31":1}, "sense": "=", "rhs": 30},
+    {"name": "d2", "coeffs": {"x12":1,"x22":1,"x32":1}, "sense": "=", "rhs": 25},
+    {"name": "d3", "coeffs": {"x13":1,"x23":1,"x33":1}, "sense": "=", "rhs": 20},
+    {"name": "d4", "coeffs": {"x14":1,"x24":1,"x34":1}, "sense": "=", "rhs": 15},
+    {"name": "cap1", "coeffs": {"x11":1,"x12":1,"x13":1,"x14":1,"y1":-50}, "sense": "<=", "rhs": 0},
+    {"name": "cap2", "coeffs": {"x21":1,"x22":1,"x23":1,"x24":1,"y2":-60}, "sense": "<=", "rhs": 0},
+    {"name": "cap3", "coeffs": {"x31":1,"x32":1,"x33":1,"x34":1,"y3":-40}, "sense": "<=", "rhs": 0}
+  ]
+}

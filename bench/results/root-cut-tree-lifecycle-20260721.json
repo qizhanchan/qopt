@@ -1,0 +1,29 @@
+{
+  "date": "2026-07-21",
+  "status": "infrastructure_retained_policy_not_promoted",
+  "profile": "30s revised reliability best-estimate best-bound-freq=10 RINS adaptive local-branching proximity-search root-cuts=200 stall=10 root-age=10 cap=30 cMIR parallel=3",
+  "implementation": {
+    "root_rows_as_stable_tree_slots": true,
+    "path_local_aging_and_reactivation": true,
+    "full_model_ruiz_scaling_reused": true,
+    "active_rows_participate_in_bound_propagation": true,
+    "strong_branch_uses_parent_active_snapshot": true,
+    "default_behavior_changed": false,
+    "aggregation_supported": false
+  },
+  "control_permanent_rows": {
+    "assign1-5-8": {"objective": 218.8334545922905, "dual_bound": 189.51259926729443, "gap": 0.13398707880211405, "nodes": 1561, "root_rows": 67},
+    "neos17": {"objective": 0.15674985738200323, "dual_bound": 0.12066253583678656, "gap": 0.03608732154521667, "nodes": 2144, "root_rows": 100},
+    "timtab1": {"objective": 1185163.9999997797, "dual_bound": 460499.1692496588, "gap": 0.6114468805585181, "nodes": 10727, "root_rows": 144}
+  },
+  "age_10": {
+    "assign1-5-8": {"objective": 220.77674362508156, "dual_bound": 188.54229927734985, "gap": 0.14600470963767617, "nodes": 1043, "average_active_rows": 58.965484180249284, "deactivations": 3623, "reactivations": 13},
+    "neos17": {"objective": 0.17358297537795656, "dual_bound": 0.10508013479025956, "gap": 0.068502840587697, "nodes": 1551, "average_active_rows": 67.12765957446808, "deactivations": 1981, "reactivations": 1172},
+    "timtab1": {"objective": 1121881.99999952, "dual_bound": 463312.5838868471, "gap": 0.5870220006319333, "nodes": 7445, "average_active_rows": 92.34685652874799, "deactivations": 13686, "reactivations": 4895}
+  },
+  "rejected_variants": {
+    "active_cap_30": "row churn and a much weaker relaxation reduced neos17 to 63 nodes and timtab1 to 2718 nodes in 30 seconds",
+    "warmup_100_or_500": "did not preserve neos17 while recovering assign1-5-8 throughput",
+    "promotion_reason": "after scaling and propagation parity, age 10 regressed assign1-5-8 and neos17 and produced only a small timtab1 gap improvement, so the five-minute suite gate was not attempted"
+  }
+}

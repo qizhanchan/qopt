@@ -1,0 +1,5 @@
+3rd_repo
+__pycache__/
+*.py[cod]
+.venv/
+site/

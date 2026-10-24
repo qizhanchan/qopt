@@ -1,0 +1,10 @@
+{
+  "name": "lp_bounds",
+  "direction": "min",
+  "vars": [
+    {"name": "x", "type": "continuous", "lower": 2, "upper": 5}
+  ],
+  "objective": {"x": 1.0},
+  "constraints": [],
+  "expect": {"status": "optimal", "objective": 2.0, "values": {"x": 2}}
+}

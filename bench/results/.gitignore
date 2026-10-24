@@ -1,0 +1,6 @@
+*.json
+!neos17-conflict-parity-20260718.json
+!timtab1-gomory-parity-20260718.json
+!strongbranch-parity-20260721.json
+!root-cut-tree-lifecycle-20260721.json
+!dualproof-conflicts-20260722.json

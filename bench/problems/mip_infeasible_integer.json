@@ -1,0 +1,13 @@
+{
+  "name": "mip_infeasible_integer",
+  "direction": "min",
+  "vars": [
+    {"name": "x", "type": "integer"}
+  ],
+  "objective": {"x": 1.0},
+  "constraints": [
+    {"name": "lo", "coeffs": {"x": 1}, "sense": ">=", "rhs": 0.2},
+    {"name": "hi", "coeffs": {"x": 1}, "sense": "<=", "rhs": 0.8}
+  ],
+  "expect": {"status": "infeasible"}
+}

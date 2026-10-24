@@ -1,0 +1,13 @@
+{
+  "name": "lp_infeasible",
+  "direction": "min",
+  "vars": [
+    {"name": "x", "type": "continuous"}
+  ],
+  "objective": {"x": 1.0},
+  "constraints": [
+    {"name": "lo", "coeffs": {"x": 1}, "sense": ">=", "rhs": 2},
+    {"name": "hi", "coeffs": {"x": 1}, "sense": "<=", "rhs": 1}
+  ],
+  "expect": {"status": "infeasible"}
+}
